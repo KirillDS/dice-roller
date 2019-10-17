@@ -1,0 +1,42 @@
+/* Necessary imports; random will randomize the value,
+ * Scanner will scan the user input and assign it to a variable.
+ */
+import java.util.Random;
+import java.util.Scanner;
+
+
+
+public class DiceRollerV2 {
+	
+	/* Main function/method that runs the 
+	 * entire application.
+	 */
+	public static void main(String[] args) {
+		/* The scanner is active before the message 
+		 * is displayed, and then a input is required.
+		 * The input is then set as the 'userInput' variable.
+		 */
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Input a Value of a Dice: ");
+		int userInput = scan.nextInt();
+		
+    
+    
+		/* Generates the random value and performs an 
+		 * 'if statement' based on the results. 
+		 * Then restarts the program.
+		 */
+		Random rand = new Random();
+		int value = rand.nextInt(6);
+		value += 1;
+		if (value == userInput) {
+			System.out.println("Congratulations");
+			System.out.println(value);
+			main(args);
+		}
+		else {
+			System.out.println(value);
+			main(args);
+		}
+	}
+}
